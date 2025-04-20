@@ -93,6 +93,8 @@ uploaded_image = st.file_uploader("Please select a photo of your dish or the res
 
 
 if uploaded_image:
+    # スクリプトの場所からの絶対パスでテンプレート画像を指定
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     template_path = os.path.join("assets", "polaframe.png")
     if not os.path.exists(template_path):
         st.error(f"Template image not found: {template_path}")
